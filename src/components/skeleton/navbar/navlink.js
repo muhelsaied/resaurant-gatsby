@@ -1,0 +1,62 @@
+import React, { Component } from "react"
+import styled from "styled-components"
+import { Link } from "gatsby"
+import { styles } from "../../../utils"
+import { links } from "./link"
+
+export default class NavLink extends Component {
+  state = {
+    links: links,
+  }
+  render() {
+    return (
+      <LinkWrapper navOpen={this.props.navOpen}>
+        {this.state.links.map(link => {
+          return (
+            <li key={link.id}>
+              <Link to={link.path} className="nav-link">
+                {link.name}
+              </Link>
+            </li>
+          )
+        })}
+      </LinkWrapper>
+    )
+  }
+}
+
+const LinkWrapper = styled.ul`
+  padding: 0.75rem 0;
+  list-style-type: none;
+  ${styles.transDefault};
+  height: ${props => (props.navOpen ? "230px" : "0")};
+  overflow: hidden;
+  .nav-link {
+    display: block;
+    text-decoration: none;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    color: ${styles.colors.darkYellow};
+    padding-left: 10%;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 25px;
+    cursor: pointer;
+    ${styles.transDefault};
+    &:hover {
+      background: ${styles.colors.darkYellow};
+      color: ${styles.colors.mainWhite};
+      padding-left: 50%;
+    }
+  }
+  @media (min-width: 768px) {
+    height: auto;
+    display: flex;
+    margin: 0 auto;
+    padding: 0.5rem 2.5rem;
+    .nav-link:hover {
+      background: ${styles.colors.darkYellow};
+      padding: 0.5rem 3rem;
+      border-radius: 10px;
+    }
+  }
+`
