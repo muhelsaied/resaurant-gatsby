@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { HomeHeader, Banner, MainButton } from "../utils"
 import BCG from "../images/bg.jpg"
-import InfoSection from "../components/skeleton/homepage/section"
+import InfoSection from "../components/skeleton/homepage/homesection"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
