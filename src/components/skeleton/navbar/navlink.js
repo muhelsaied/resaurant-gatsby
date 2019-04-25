@@ -54,6 +54,9 @@ const LinkWrapper = styled.ul`
     display: flex;
     margin: 0 auto;
     padding: 0.5rem 2.5rem;
+    .nav-link {
+      padding: 0.5rem 1.5rem;
+    }
     .nav-link:hover {
       background: ${styles.colors.darkYellow};
       padding: 0.5rem 3rem;

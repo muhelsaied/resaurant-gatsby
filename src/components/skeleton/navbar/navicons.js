@@ -34,7 +34,7 @@ const IconWrapper = styled.div`
   justify-content: space-around;
   width: 20%;
   .icon-div {
-    padding: 2%;
+    padding: 2% 3.5%;
   }
   .icon-div:hover {
     background: ${styles.colors.darkYellow};
@@ -59,8 +59,10 @@ const IconWrapper = styled.div`
     justify-content: space-between;
     width: 100%;
     align-content: center;
-    .icon-div:hover {
-      padding: 4% 4.5%;
+    flex-wrap: nowrap;
+    .icon-div {
+      padding: 2% 4%;
+      margin: 2%;
     }
   }
 `
