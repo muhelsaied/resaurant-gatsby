@@ -23,14 +23,14 @@ export default class NavBar extends Component {
       <NavBarWrapper>
         <Header handleChange={this.handleChange} />
         <NavLinks navOpen={this.state.navBarOpen} />
-        <NavIcons />
+        <NavIcons navOpen={this.state.navBarOpen} />
       </NavBarWrapper>
     )
   }
 }
 
 const NavBarWrapper = styled.nav`
-  background: ${styles.colors.mainYellow};
+  background: ${styles.colors.lightYellow};
   @media (min-width: 780px) {
     display: flex;
     align-items: center;

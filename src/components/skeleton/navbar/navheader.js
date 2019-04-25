@@ -30,7 +30,7 @@ const HeaderWrapper = styled.div`
     width: 50px;
   }
   .nav-toggle {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     color: ${styles.colors.darkYellow};
     cursor: pointer;
   }

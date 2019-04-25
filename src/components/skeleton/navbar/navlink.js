@@ -36,7 +36,7 @@ const LinkWrapper = styled.ul`
     text-decoration: none;
     padding: 0.5rem 1rem 0.5rem 1rem;
     color: ${styles.colors.darkYellow};
-    padding-left: 10%;
+    padding-left: 5%;
     text-transform: uppercase;
     font-weight: 500;
     font-size: 25px;
@@ -46,9 +46,10 @@ const LinkWrapper = styled.ul`
       background: ${styles.colors.darkYellow};
       color: ${styles.colors.mainWhite};
       padding-left: 50%;
+      border-radius: 10px;
     }
   }
-  @media (min-width: 768px) {
+  @media (min-width: 780px) {
     height: auto;
     display: flex;
     margin: 0 auto;
