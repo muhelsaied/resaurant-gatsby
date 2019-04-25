@@ -25,7 +25,6 @@ const HeaderWrapper = styled.header`
   align-items: color-interpolation-filters;
   text-align: center;
   font-family: "Anton", sans-serif;
-  color: ${styles.colors.lightYellow};
 `
 
 const DefaultHeader = styled(HeaderWrapper)`
