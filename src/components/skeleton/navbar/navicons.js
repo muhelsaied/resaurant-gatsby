@@ -54,7 +54,7 @@ const IconWrapper = styled.div`
     display: flex;
     ${styles.transDefault};
     opacity: ${props => (props.show ? "1" : "0")};
-    height: ${props => (props.show ? "2%" : "0")};
+    height: ${props => (props.show ? "1" : "0")};
     margin-top: ${props => (props.navOpen ? "1px" : "-40px")};
     justify-content: space-between;
     width: 100%;

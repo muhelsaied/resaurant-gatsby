@@ -30,6 +30,7 @@ export default class NavBar extends Component {
 }
 
 const NavBarWrapper = styled.nav`
+  min-height: 80px;
   background: ${styles.colors.lightYellow};
   @media (min-width: 780px) {
     display: flex;
