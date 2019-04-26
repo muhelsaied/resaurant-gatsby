@@ -12,7 +12,7 @@ export default class NavIcons extends Component {
       <IconWrapper show={navOpen}>
         {this.state.Icons.map(icon => {
           return (
-            <div className="icon-div" key={icon.id}>
+            <div className="icon-div " key={icon.id}>
               <a
                 href={icon.link}
                 className="icon"
@@ -51,8 +51,9 @@ const IconWrapper = styled.div`
   }
 
   @media (max-width: 780px) {
-    display: flex;
-    ${styles.transDefault};
+    display: none;
+  }
+    /* ${styles.transDefault};
     opacity: ${props => (props.show ? "1" : "0")};
     height: ${props => (props.show ? "1" : "0")};
     margin-top: ${props => (props.navOpen ? "1px" : "-40px")};
@@ -64,5 +65,5 @@ const IconWrapper = styled.div`
       padding: 2% 4%;
       margin: 2%;
     }
-  }
+  } */
 `

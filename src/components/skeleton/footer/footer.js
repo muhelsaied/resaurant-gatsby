@@ -17,7 +17,7 @@ export default class Footer extends Component {
               <h3>all rights reversed</h3>
               <h5> D muhamed elsaied &copy;{new Date().getFullYear()}</h5>
             </div>
-            <div className="col-sm-10 col-md-8 d-lg-none text-center text-capitalize d-flex mx-auto">
+            <div className="col-sm-12 col-md-12 d-lg-none text-center text-capitalize d-flex mx-auto">
               {this.state.Icons.map(icon => {
                 return (
                   <div className="icon-div" key={icon.id}>
@@ -45,14 +45,18 @@ const FooterWrapper = styled.footer`
   color: ${styles.colors.lightYellow};
   ${styles.textSlanted};
   .icon-div {
-    width: 5rem;
+    width: 2rem;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin: 2% auto;
+    height: 2.5rem;
   }
   .icon-div:hover {
     background: ${styles.colors.darkYellow};
-    width: 10rem;
+    width: 5rem;
+    flex-wrap: nowrap;
+    border-color: ${styles.colors.mainWhite};
   }
   .icon {
     font-size: 1.3rem;

@@ -30,6 +30,9 @@ const LinkWrapper = styled.ul`
   list-style-type: none;
   ${styles.transDefault};
   height: ${props => (props.navOpen ? "230px" : "0")};
+  margin-left: ${props => (props.navOpen ? "0" : "-100px")};
+  margin-top: ${props => (props.navOpen ? "0" : "-100px")};
+  margin-bottom: 0;
   overflow: hidden;
   .nav-link {
     display: block;
@@ -41,12 +44,14 @@ const LinkWrapper = styled.ul`
     font-weight: 500;
     font-size: 25px;
     cursor: pointer;
+    opacity: ${props => (props.navOpen ? "1" : "0")};
     ${styles.transDefault};
     &:hover {
       background: ${styles.colors.darkYellow};
       color: ${styles.colors.mainWhite};
       padding-left: 50%;
       border-radius: 10px;
+      opacity: 0.8;
     }
   }
   @media (min-width: 780px) {
