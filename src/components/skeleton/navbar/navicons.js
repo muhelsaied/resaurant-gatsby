@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import styled from "styled-components"
-import { Icons } from "./Icons"
+import { Icons } from "../Icons"
 import { styles } from "../../../utils"
 export default class NavIcons extends Component {
   state = {

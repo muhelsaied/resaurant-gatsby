@@ -1,12 +1,12 @@
 export const colors = {
-  mainColor: "#f26038",
+  mainColor: "#3c322f",
   secOrange: "#ff5e00",
   mainWhite: "#ffeee4",
   darkYellow: `#866728`,
   lightYellow: "#f3e2c3",
   mainRed: "#d2234b",
   mainBlack: `#262626`,
-  mainYellow: `#d2aa5c`,
+  mainYellow: `#3c322f`,
   mainGrey: `#474747`,
 }
 

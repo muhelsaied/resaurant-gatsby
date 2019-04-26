@@ -10,6 +10,6 @@ const SectionWrapper = styled.section`
   margin: 0 auto;
   background: ${styles.colors.darkYellow};
   @media (max-width: 780px) {
-    width: 100vw;
+    width: 100%;
   }
 `
