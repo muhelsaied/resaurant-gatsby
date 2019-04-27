@@ -6,24 +6,24 @@ import Img from "gatsby-image"
 
 // get single Image
 const GET_Menu = graphql`
-{
-  menu: allContentfulMenuRestaurant {
-    edges {
-      node {
-        id
-        tilte
-        price
-        des
-        image {
-          fixed(width: 100, height: 100) {
-            src
-            ...GatsbyContentfulFixed_tracedSVG
+  {
+    menu: allContentfulMenuRestaurant {
+      edges {
+        node {
+          id
+          tilte
+          price
+          des
+          image {
+            fixed(width: 100, height: 100) {
+              src
+              ...GatsbyContentfulFixed_tracedSVG
+            }
           }
         }
       }
     }
   }
-}
 `
 
 export default class Menu extends Component {
@@ -36,7 +36,7 @@ export default class Menu extends Component {
           const product = data.menu.edges
           return (
             <Section>
-              <MenuWrapper className="container">
+              <MenuWrapper className="container" id="menu">
                 <div className="row m-0 py-3">
                   <div className="col-12 mx-auto">
                     <Title

@@ -13,7 +13,7 @@ const IndexPage = () => (
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <HomeHeader img={BCG} title="hot meal restaurant">
       <Banner title="hot meal restaurant" subtitle="53 Mac str newyork">
-        <MainButton path="/menu/" name="menu" />
+        <MainButton path="/#menu" name="menu" />
       </Banner>
     </HomeHeader>
     <InfoSection />
