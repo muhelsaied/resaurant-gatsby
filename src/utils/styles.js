@@ -2,7 +2,7 @@ export const colors = {
   mainColor: "#3c322f",
   secOrange: "#ff5e00",
   mainWhite: "#ffeee4",
-  darkYellow: `#866728`,
+  darkYellow: `#c1a36b`,
   lightYellow: "#f3e2c3",
   mainRed: "#d2234b",
   mainBlack: `#262626`,
