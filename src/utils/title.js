@@ -17,9 +17,9 @@ Title.defaultProps = {
 const TitleWrapper = styled.div`
   color: ${styles.colors.mainYellow};
   text-align: center;
+  ${styles.textSlanted};
   text-shadow: 3px 2px 12px ${styles.colors.mainYellow};
   h3 {
-    ${styles.textSlanted};
     ${styles.letterSpacing({ spacing: "0.3rem" })};
     font-size: 2rem;
   }
