@@ -8,7 +8,7 @@ export default class Footer extends Component {
     Icons: Icons,
   }
   render() {
-    console.log(this.state.Icons)
+    // console.log(this.state.Icons)
     return (
       <FooterWrapper className="py-3">
         <div className="container">

@@ -16,6 +16,7 @@ const IndexPage = () => (
       </Banner>
     </HomeHeader>
     <InfoSection />
+    <Gallary />
   </Layout>
 )
 
