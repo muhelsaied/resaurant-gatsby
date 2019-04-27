@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import { styles } from "./index"
 import DefaultBcg from "../images/bg-2.jpg"
 // home header
 function HomeHeader({ img, children }) {

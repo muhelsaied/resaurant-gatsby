@@ -61,6 +61,7 @@ const LinkWrapper = styled.ul`
     padding: 0.5rem 2.5rem;
     .nav-link {
       padding: 0.5rem 1.5rem;
+      opacity:1;
     }
     .nav-link:hover {
       background: ${styles.colors.darkYellow};

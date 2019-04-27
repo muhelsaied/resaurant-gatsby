@@ -13,7 +13,7 @@ export default class Footer extends Component {
       <FooterWrapper className="py-3">
         <div className="container">
           <div className="row m-0">
-            <div className="col-sm-10 col-md-8 col-lg-12 text-center text-capitalize">
+            <div className="col-12 text-center text-capitalize">
               <h3>all rights reversed</h3>
               <h5> D muhamed elsaied &copy;{new Date().getFullYear()}</h5>
             </div>
