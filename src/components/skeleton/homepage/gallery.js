@@ -1,18 +1,22 @@
-import React from "react"
+import React, { Component } from "react"
 import styled from "styled-components"
 import { StaticQuery, graphql } from "gatsby"
 import { styles, Section } from "../../../utils"
 import Img from "gatsby-image"
 
 // get single Image
-const GET_IMAGES = graphql`
+const GET_Products = graphql`
   {
-    gallaryImage: allFile(filter: { relativeDirectory: { eq: "foodmenu" } }) {
+    gallaryProduct: allContentfulGallaryRestaurant {
       edges {
         node {
-          childImageSharp {
+          id
+          title
+          price
+          image {
             fluid(maxWidth: 500) {
-              ...GatsbyImageSharpFluid_tracedSVG
+              src
+              ...GatsbyContentfulFluid_tracedSVG
             }
           }
         }
@@ -21,33 +25,38 @@ const GET_IMAGES = graphql`
   }
 `
 
-export default function Gallery() {
-  return (
-    <StaticQuery
-      query={GET_IMAGES}
-      render={data => {
-        console.log(data.gallaryImage.edges)
-        const gallaryImage = data.gallaryImage.edges
-        return (
-          <Section>
-            <GalleryWrapper>
-              {gallaryImage.map(({ node }, index) => {
-                return (
-                  <div className={`item item-${index}`} key={index}>
-                    <Img
-                      fluid={node.childImageSharp.fluid}
-                      className="img-gallary img-container"
-                    />
-                    <p className="info">awesome burger</p>
-                  </div>
-                )
-              })}
-            </GalleryWrapper>
-          </Section>
-        )
-      }}
-    />
-  )
+//               ...GatsbyImageSharpFluid_tracedSVG
+
+export default class Gallery extends Component {
+  render() {
+    return (
+      <StaticQuery
+        query={GET_Products}
+        render={data => {
+          // console.log(data.gallaryProduct.edges)
+          const product = data.gallaryProduct.edges
+          return (
+            <Section>
+              <GalleryWrapper>
+                {product.map(({ node }, index = 1) => {
+                  return (
+                    <div className={`item item-${index}`} key={node.id}>
+                      <Img
+                        fluid={node.image.fluid}
+                        className="img-gallary img-container"
+                      />
+                      <p className="info">{node.title}</p>
+                      <p className="price bg-danger">{node.price} $</p>
+                    </div>
+                  )
+                })}
+              </GalleryWrapper>
+            </Section>
+          )
+        }}
+      />
+    )
+  }
 }
 
 const GalleryWrapper = styled.div`
@@ -59,16 +68,22 @@ const GalleryWrapper = styled.div`
     position: relative;
     overflow: hidden;
   }
-  .info {
+  .info,
+  .price {
     position: absolute;
     top: 2%;
-    left: 5%;
     background: ${styles.colors.darkYellow};
     padding: 0.5rem;
     border-radius: 15px;
     color: ${styles.colors.mainWhite};
     text-transform: capitalize;
     ${styles.transObject};
+  }
+  .info {
+    left: 5%;
+  }
+  .price {
+    right: 10%;
   }
   .item:hover {
     cursor: pointer;
