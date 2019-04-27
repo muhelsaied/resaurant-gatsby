@@ -16,8 +16,8 @@ const GET_Menu = graphql`
           des
           image {
             fixed(width: 100, height: 100) {
-              src}}
-              ...}}ed_tracedSVG
+              src
+              ...GatsbyImageSharpFluid_tracedSVG
             }
           }
         }
