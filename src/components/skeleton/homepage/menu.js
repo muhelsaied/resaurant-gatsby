@@ -6,27 +6,25 @@ import Img from "gatsby-image"
 
 // get single Image
 const GET_Menu = graphql`
-  {
-    menu: allContentfulMenuRestaurant {
-      edges {
-        node {
-          id
-          tilte
-          price
-          des
-          image {
-            fixed(width: 100, height: 100) {
-              src
-              ...GatsbyImageSharpFluid_tracedSVG
-            }
+{
+  menu: allContentfulMenuRestaurant {
+    edges {
+      node {
+        id
+        tilte
+        price
+        des
+        image {
+          fixed(width: 100, height: 100) {
+            src
+            ...GatsbyContentfulFixed_tracedSVG
           }
         }
       }
     }
   }
+}
 `
-
-//               ...GatsbyImageSharpFluid_tracedSVG
 
 export default class Menu extends Component {
   render() {
