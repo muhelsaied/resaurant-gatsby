@@ -89,23 +89,6 @@ export default class ContactForm extends Component {
 
               <div className="status" id="status" />
             </div>
-            <div className="col-sm-10 col-md-8 col-lg-3 mx-auto text-capitalize ">
-              <div className="col-10 mx-auto text-light">
-                <h3>contact with us</h3>
-                <p>muhamed elsaied </p>
-                <p>muhahmed2099@gmail.com</p>
-              </div>
-              <div className="col-10 mx-auto text-muted">
-                <h3>blablabla city usa</h3>
-                <p>2434 blablabla city </p>
-                <p>123434212 </p>
-              </div>
-              <div className="col-10 mx-auto text-muted">
-                <h3>blablabla city usa</h3>
-                <p>2434 blablabla city </p>
-                <p>123434212 </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
