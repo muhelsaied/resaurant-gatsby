@@ -5,26 +5,16 @@ import { styles, Section } from "../../../utils"
 import Img from "gatsby-image"
 
 // get single Image
-const singleImage = graphql`
+const GET_IMAGES = graphql`
   {
-    burger: file(relativePath: { eq: "foodmenu/burger.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 500) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-    fruit: file(relativePath: { eq: "foodmenu/fruit.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 500) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-    hot: file(relativePath: { eq: "foodmenu/hot.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 500) {
-          ...GatsbyImageSharpFluid_tracedSVG
+    gallaryImage: allFile(filter: { relativeDirectory: { eq: "foodmenu" } }) {
+      edges {
+        node {
+          childImageSharp {
+            fluid(maxWidth: 500) {
+              ...GatsbyImageSharpFluid_tracedSVG
+            }
+          }
         }
       }
     }
@@ -34,26 +24,24 @@ const singleImage = graphql`
 export default function Gallery() {
   return (
     <StaticQuery
-      query={singleImage}
+      query={GET_IMAGES}
       render={data => {
-        const burger = data.burger.childImageSharp.fluid
-        const fruit = data.fruit.childImageSharp.fluid
-        const hot = data.hot.childImageSharp.fluid
+        console.log(data.gallaryImage.edges)
+        const gallaryImage = data.gallaryImage.edges
         return (
           <Section>
             <GalleryWrapper>
-              <div className="item item-1 card">
-                <Img fluid={burger} className="img-gallay img-container" />
-                <p className="info">awesome burger</p>
-              </div>
-              <div className="item item-2 card">
-                <Img fluid={fruit} className="img-gallay img-container" />
-                <p className="info">fresh fruit salat</p>
-              </div>
-              <div className="item item-3 card">
-                <Img fluid={hot} className="img-gallay img-container" />
-                <p className="info">hot steak on grill</p>
-              </div>
+              {gallaryImage.map(({ node }, index) => {
+                return (
+                  <div className={`item item-${index}`} key={index}>
+                    <Img
+                      fluid={node.childImageSharp.fluid}
+                      className="img-gallary img-container"
+                    />
+                    <p className="info">awesome burger</p>
+                  </div>
+                )
+              })}
             </GalleryWrapper>
           </Section>
         )
@@ -85,7 +73,10 @@ const GalleryWrapper = styled.div`
   .item:hover {
     cursor: pointer;
   }
-  .item:hover .img-gallay {
+  .img-gallary {
+    width: 100%;
+  }
+  .item:hover .img-gallary {
     transform: scale(1.1);
     ${styles.transObject};
     opacity: 0.5;

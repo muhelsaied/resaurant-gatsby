@@ -3,7 +3,7 @@ import { Section, Title, SectionButton, styles } from "../../../utils"
 import styled from "styled-components"
 export default function InfoSection() {
   return (
-    <Section>
+    <Section background={styles.colors.darkYellow}>
       <Title subheader="we would tell you our" header="success" />
       <ParagraphWrapper className="text-uppercase">
         loremipsuLorem Ipsum is simply dummy text of the printing and
@@ -23,7 +23,7 @@ const ParagraphWrapper = styled.div`
   width: 90%;
   margin: 5% auto;
   line-height: 2;
-  font-family: "Anton", sans-serif;
+  ${styles.textSlanted}
   justify-content: center;
   color: ${styles.colors.mainWhite};
   &:hover {
