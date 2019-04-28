@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import styled from "styled-components"
 import { styles } from "../../../utils"
 import { Icons } from "../Icons"
-
+import ButtonUp from "../buttonup"
 export default class Footer extends Component {
   state = {
     Icons: Icons,
@@ -34,6 +34,8 @@ export default class Footer extends Component {
               })}
             </div>
           </div>
+
+          <ButtonUp />
         </div>
       </FooterWrapper>
     )

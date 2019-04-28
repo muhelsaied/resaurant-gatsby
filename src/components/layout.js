@@ -8,7 +8,6 @@ import Bootstrap from "bootstrap/dist/css/bootstrap.min.css"
 import NavBar from "../components/skeleton/navbar"
 //footer
 import Footer from "../components/skeleton/footer"
-import ButtonUp from "../components/skeleton/buttonup"
 import "./layout.css"
 
 const Layout = ({ children, location }) => {
@@ -17,7 +16,6 @@ const Layout = ({ children, location }) => {
       <NavBar />
       {/* <Transition location={location}>{children}</Transition> */}
       {children}
-      <ButtonUp />
       <Footer />
     </>
   )
